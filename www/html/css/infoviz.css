@@ -2,17 +2,27 @@
   --label-gap: .2em;
   --leaf-background: initial;
 
-  --bg_light_1: white;
-  --fg_light_1: black;
-  --borders_light_1: #ccc;
-  --bg_light_2: #eee;
-  --fg_light_2: black;
+  --bg-light-1: rgb(253, 241, 241);
+  --fg-light-1: rgb(17, 0, 0);
+  --borders-light-1: #ccc;
+  --bg-light-input: #eee;
+  --fg-light-input: black;
 
-  --bg_dark_1: black;
-  --fg_dark_1: white;
-  --bg_dark_2: #333;
-  --fg_dark_2: #eee;
-  --borders_dark_1: #333;
+  --border-light-input: 5px solid #ccc;
+  --outline-light-input: 5px solid black;
+
+  --bg-dark-1: #222;
+  --fg-dark-1: #eee;
+  --bg_dark_input: #000;
+  --fg-dark-input: #eee;
+  --outline-dark-input: 5px solid #666;
+  --borders-dark-1: #444;
+
+  --border-dark-input: 5px solid #222;
+  --outline-dark-input: 5px solid #666; 
+
+  --input-border-radius: .2em;
+  --node-border-radius: .6em;
 }
 
 /* reset */
@@ -26,9 +36,8 @@
 
 body {
   min-width: 250px;
-  background: var(--bg_light_1);
-  color: var(--fg_light_1);
-  border: 1px solid var(--borders_light_1);
+  background: var(--bg-light-1);
+  color: var(--fg-light-1);
 }
 
 .data-node {
@@ -39,7 +48,8 @@ body {
   text-indent: 0;
   list-style: none;
 
-  border: 1px solid var(--borders_light_1);
+  border: 1px solid var(--borders-light-1);
+  border-radius: var(--node-border-radius);
   margin: 1em;
 }
 
@@ -73,8 +83,17 @@ body {
 }
 
 .data-leaf>input {
-  background: var(--bg_light_2);
-  color: var(--fg_light_2);
+  background: var(--bg-light-input);
+  color: var(--fg-light-input);
+  padding: .6em;
+
+  border-radius: var(--input-border-radius);
+  border: var(--border-light-input);
+  outline: none;
+}
+
+.data-leaf>input:focus {
+  border: var(--outline-light-input);
 }
 
 @media only screen and (max-width: 600px) {
@@ -89,13 +108,21 @@ body {
 
 @media ( prefers-color-scheme: dark ) {
 	body {
-    background: var(--bg_dark_1);
-    color: var(--fg_dark_1);
-    border: 1px solid var(--borders_dark_1);
+    background: var(--bg-dark-1);
+    color: var(--fg-dark-1);
 	}
- 
+  
+  .data-node {
+    border: 1px solid var(--borders-dark-1);
+  }
+  
   .data-leaf>input {
-    background: var(--bg_dark_2);
-    color: var(--fg_dark_2);
+    background: var(--bg_dark_input);
+    color: var(--fg-dark-input);
+    border: var(--border-dark-input);
+  }
+
+  .data-leaf>input:focus {
+    border: var(--outline-dark-input);
   }
 }
