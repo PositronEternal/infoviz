@@ -1,6 +1,7 @@
 :root {
   --label-gap: .2em;
-  --leaf-background: #ccc;
+  --leaf-background: initial;
+
 }
 
 /* reset */
@@ -8,6 +9,12 @@
 .data-node * {
   margin: 0;
   padding: 0;
+  
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 250px;
 }
 
 .data-node {
@@ -18,10 +25,8 @@
   text-indent: 0;
   list-style: none;
 
-  border: 1px solid black;
+  border: 1px solid #ccc;
   margin: 1em;
-
-  width: fit-content;
 }
 
 .data-node h1,
@@ -34,26 +39,31 @@
   width: 100%;
 }
 
-.data-node .data-node {
-  /* flex-direction:column; */
-}
-
 .data-leaf {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: .4em;
-  padding: 1em;
 
   background: var(--leaf-background);
   text-indent: 0;
+
+  min-width: min-content;
+  max-width: max-content;
 }
 
 .data-leaf>label {
   height: max-content;
   text-align: center;
+  margin: 0 var(--label-gap) 0 0;
 }
-.data-leaf>input {
-  margin: var(--label-gap);
-  width: max-content;
+
+@media only screen and (max-width: 600px) {
+  .data-leaf {
+    flex-direction: column;
+  }
+
+  .data-leaf>label {
+    margin: 0 0 var(--label-gap) 0;
+  }
 }
