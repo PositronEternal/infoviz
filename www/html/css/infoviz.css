@@ -6,23 +6,23 @@
 
   --bg-light-1: rgb(253, 241, 241);
   --fg-light-1: rgb(17, 0, 0);
-  --border-light-1: var(--border-thickness) solid #ccc;
+  --border-light-1: var(--border-thickness) double #ccc;
   --border-light-focus-1: var(--border-thickness) solid #aaa;
   --bg-light-input: #eee;
   --fg-light-input: black;
 
-  --border-light-input: var(--border-thickness) solid #ccc;
+  --border-light-input: var(--border-thickness) double #ccc;
   --outline-light-input: var(--border-thickness) solid black;
 
-  --bg-dark-1: #222;
+  --bg-dark-1: #111;
   --fg-dark-1: #eee;
   --bg_dark_input: #000;
   --fg-dark-input: #eee;
   --outline-dark-input: var(--border-thickness) solid #666;
-  --border-dark-1: var(--border-thickness) solid #444;
-  --border-dark-focus-1: var(--border-thickness) solid #666;
+  --border-dark-1: var(--border-thickness) double #333;
+  --border-dark-focus-1: var(--border-thickness) solid #444;
 
-  --border-dark-input: var(--border-thickness) solid #222;
+  --border-dark-input: var(--border-thickness) double #222;
   --outline-dark-input: var(--border-thickness) solid #666; 
 
   --input-border-radius: .2em;
