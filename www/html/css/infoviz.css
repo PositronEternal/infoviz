@@ -2,6 +2,17 @@
   --label-gap: .2em;
   --leaf-background: initial;
 
+  --bg_light_1: white;
+  --fg_light_1: black;
+  --borders_light_1: #ccc;
+  --bg_light_2: #eee;
+  --fg_light_2: black;
+
+  --bg_dark_1: black;
+  --fg_dark_1: white;
+  --bg_dark_2: #333;
+  --fg_dark_2: #eee;
+  --borders_dark_1: #333;
 }
 
 /* reset */
@@ -15,6 +26,9 @@
 
 body {
   min-width: 250px;
+  background: var(--bg_light_1);
+  color: var(--fg_light_1);
+  border: 1px solid var(--borders_light_1);
 }
 
 .data-node {
@@ -25,7 +39,7 @@ body {
   text-indent: 0;
   list-style: none;
 
-  border: 1px solid #ccc;
+  border: 1px solid var(--borders_light_1);
   margin: 1em;
 }
 
@@ -58,6 +72,11 @@ body {
   margin: 0 var(--label-gap) 0 0;
 }
 
+.data-leaf>input {
+  background: var(--bg_light_2);
+  color: var(--fg_light_2);
+}
+
 @media only screen and (max-width: 600px) {
   .data-leaf {
     flex-direction: column;
@@ -65,5 +84,18 @@ body {
 
   .data-leaf>label {
     margin: 0 0 var(--label-gap) 0;
+  }
+}
+
+@media ( prefers-color-scheme: dark ) {
+	body {
+    background: var(--bg_dark_1);
+    color: var(--fg_dark_1);
+    border: 1px solid var(--borders_dark_1);
+	}
+ 
+  .data-leaf>input {
+    background: var(--bg_dark_2);
+    color: var(--fg_dark_2);
   }
 }
