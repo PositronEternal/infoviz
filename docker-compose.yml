@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  hot-php-apache:
+    build: ./hot-php-apache
+    ports:
+      - 8080:80
+    volumes:
+      - ./www:/var/www
+
+  db:
+    image: mysql:8.0.25
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: securerootpassword
+      MYSQL_DATABASE: hot_database
+      MYSQL_USER: hot_user
+      MYSQL_PASSWORD: hot_user_secret1234
+    volumes:
+      - ./db-bootstrap:/docker-entrypoint-initdb.d
+      - hot-php_bootstrapped:/var/lib/mysql
+
+volumes:
+  hot-php_bootstrapped:
