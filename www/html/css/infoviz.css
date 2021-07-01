@@ -2,9 +2,12 @@
   --label-gap: .2em;
   --leaf-background: initial;
 
+  --border-thickness: 5px;
+
   --bg-light-1: rgb(253, 241, 241);
   --fg-light-1: rgb(17, 0, 0);
-  --borders-light-1: #ccc;
+  --border-light-1: var(--border-thickness) solid #ccc;
+  --border-light-focus-1: var(--border-thickness) solid #aaa;
   --bg-light-input: #eee;
   --fg-light-input: black;
 
@@ -16,13 +19,21 @@
   --bg_dark_input: #000;
   --fg-dark-input: #eee;
   --outline-dark-input: 5px solid #666;
-  --borders-dark-1: #444;
+  --border-dark-1: var(--border-thickness) solid #444;
+  --border-dark-focus-1: var(--border-thickness) solid #666;
 
   --border-dark-input: 5px solid #222;
   --outline-dark-input: 5px solid #666; 
 
   --input-border-radius: .2em;
-  --node-border-radius: .6em;
+  --node-border-radius: 2em;
+
+  font-family: sans-serif;
+}
+
+input {
+  font-family: sans-serif;
+  font-size: 1.2em;
 }
 
 /* reset */
@@ -48,9 +59,13 @@ body {
   text-indent: 0;
   list-style: none;
 
-  border: 1px solid var(--borders-light-1);
+  border: var(--border-light-1);
   border-radius: var(--node-border-radius);
   margin: 1em;
+}
+
+.data-node:focus-within {
+  border: var(--border-light-focus-1);
 }
 
 .data-node h1,
@@ -59,7 +74,8 @@ body {
 .data-node h4,
 .data-node h5,
 .data-node h6 {
-  margin: .2em;
+  margin-top: calc(var(--node-border-radius)/2);
+  margin-left: calc(var(--node-border-radius)/2);
   width: 100%;
 }
 
@@ -113,7 +129,11 @@ body {
 	}
   
   .data-node {
-    border: 1px solid var(--borders-dark-1);
+    border: var(--border-dark-1);
+  }
+
+  .data-node:focus-within {
+    border: var(--border-dark-focus-1);
   }
   
   .data-leaf>input {
