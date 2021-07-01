@@ -78,6 +78,10 @@ body {
   width: 100%;
 }
 
+.form-controls-node {
+  width: 100%;
+}
+
 .data-leaf {
   display: flex;
   flex-direction: row;

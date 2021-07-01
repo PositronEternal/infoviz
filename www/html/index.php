@@ -25,7 +25,7 @@
       <li class="data-leaf"><label for="data_leaf[3]">Test 4</label><input id="data_leaf[3]" type="text" name="heirarchical_from_nodes[3]" value="test value 4"></li>
       <li class="data-leaf"><label for="data_leaf[4]">Test 5</label><input id="data_leaf[4]" type="text" name="heirarchical_from_nodes[4]" value="test value 5"></li>
       <li class="data-leaf"><label for="data_leaf[5]">Test 6</label><input id="data_leaf[5]" type="text" name="heirarchical_from_nodes[5]" value="test value 6"></li>
-      <ul class="data-node">
+      <ul class="data-node form-controls-node">
         <li class="data-leaf"><input type="button" value="Submit Form"></li>
         <li class="data-leaf"><input type="button" value="Clear Form"></li>
       </ul>
