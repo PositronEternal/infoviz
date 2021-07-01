@@ -1,0 +1,59 @@
+:root {
+  --label-gap: .2em;
+  --leaf-background: #ccc;
+}
+
+/* reset */
+.data-node,
+.data-node * {
+  margin: 0;
+  padding: 0;
+}
+
+.data-node {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  text-indent: 0;
+  list-style: none;
+
+  border: 1px solid black;
+  margin: 1em;
+
+  width: fit-content;
+}
+
+.data-node h1,
+.data-node h2,
+.data-node h3,
+.data-node h4,
+.data-node h5,
+.data-node h6 {
+  margin: .2em;
+  width: 100%;
+}
+
+.data-node .data-node {
+  /* flex-direction:column; */
+}
+
+.data-leaf {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: .4em;
+  padding: 1em;
+
+  background: var(--leaf-background);
+  text-indent: 0;
+}
+
+.data-leaf>label {
+  height: max-content;
+  text-align: center;
+}
+.data-leaf>input {
+  margin: var(--label-gap);
+  width: max-content;
+}
