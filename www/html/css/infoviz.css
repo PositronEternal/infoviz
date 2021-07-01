@@ -2,7 +2,7 @@
   --label-gap: .2em;
   --leaf-background: initial;
 
-  --border-thickness: 5px;
+  --border-thickness: 4px;
 
   --bg-light-1: rgb(253, 241, 241);
   --fg-light-1: rgb(17, 0, 0);
@@ -11,19 +11,19 @@
   --bg-light-input: #eee;
   --fg-light-input: black;
 
-  --border-light-input: 5px solid #ccc;
-  --outline-light-input: 5px solid black;
+  --border-light-input: var(--border-thickness) solid #ccc;
+  --outline-light-input: var(--border-thickness) solid black;
 
   --bg-dark-1: #222;
   --fg-dark-1: #eee;
   --bg_dark_input: #000;
   --fg-dark-input: #eee;
-  --outline-dark-input: 5px solid #666;
+  --outline-dark-input: var(--border-thickness) solid #666;
   --border-dark-1: var(--border-thickness) solid #444;
   --border-dark-focus-1: var(--border-thickness) solid #666;
 
-  --border-dark-input: 5px solid #222;
-  --outline-dark-input: 5px solid #666; 
+  --border-dark-input: var(--border-thickness) solid #222;
+  --outline-dark-input: var(--border-thickness) solid #666; 
 
   --input-border-radius: .2em;
   --node-border-radius: 2em;
