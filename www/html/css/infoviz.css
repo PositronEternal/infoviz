@@ -12,18 +12,17 @@
   --fg-light-input: black;
 
   --border-light-input: var(--border-thickness) double #ccc;
-  --outline-light-input: var(--border-thickness) solid black;
+  --border-light-input-focus: var(--border-thickness) solid black;
 
   --bg-dark-1: #111;
   --fg-dark-1: #eee;
   --bg_dark_input: #000;
   --fg-dark-input: #eee;
-  --outline-dark-input: var(--border-thickness) solid #666;
   --border-dark-1: var(--border-thickness) double #333;
   --border-dark-focus-1: var(--border-thickness) solid #444;
 
   --border-dark-input: var(--border-thickness) double #222;
-  --outline-dark-input: var(--border-thickness) solid #666; 
+  --border-dark-input-focus: var(--border-thickness) solid #666;
 
   --input-border-radius: .2em;
   --node-border-radius: 2em;
@@ -109,7 +108,7 @@ body {
 }
 
 .data-leaf>input:focus {
-  border: var(--outline-light-input);
+  border: var(--border-light-input-focus);
 }
 
 @media only screen and (max-width: 600px) {
@@ -143,6 +142,6 @@ body {
   }
 
   .data-leaf>input:focus {
-    border: var(--outline-dark-input);
+    border: var(--border-dark-input-focus);
   }
 }
