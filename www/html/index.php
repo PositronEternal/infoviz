@@ -78,4 +78,4 @@ function build_node($data_node, $parentage = [], $level = 1)
   </form>
 </body>
 
-</html><?php
+</html>
