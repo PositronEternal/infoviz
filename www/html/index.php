@@ -13,7 +13,7 @@ $data['controls'] = [];
 function build_node($data_node, $parentage = [], $level = 1)
 {
   $title = $data_node['title'] ?? null;
-  
+
   if (!$title) {
     return;
   }
@@ -33,7 +33,7 @@ function build_node($data_node, $parentage = [], $level = 1)
     $id_path = implode('_', $parentage);
     $new_keyname = str_replace(' ', '_', $key);
     $remaining_path = array_slice($parentage, 1);
-    $name_path = empty($parentage) ? '' :  $parentage[0] . (empty($remaining_path) ? '' : '[' . implode('][', $remaining_path) . ']') . '['. $new_keyname . ']';
+    $name_path = empty($parentage) ? '' :  $parentage[0] . (empty($remaining_path) ? '' : '[' . implode('][', $remaining_path) . ']') . '[' . $new_keyname . ']';
 
     $path_key = $id_path . ($id_path ? '_' : '') . $new_keyname;
 
@@ -43,11 +43,10 @@ function build_node($data_node, $parentage = [], $level = 1)
       array_pop($parentage);
     } else {
 
-      if($key == 'controls') {
+      if ($key == 'controls') {
         // handle controls building
-      }
-      else {
-        echo '<li class="data-leaf"><label for="' . $path_key .'">' . $key . '</label><input id="' . $path_key . '" type="text" name="'. $name_path .'" value="'. $data_node[$key] . '"></li>';
+      } else {
+        echo '<li class="data-leaf"><label for="' . $path_key . '">' . $key . '</label><input id="' . $path_key . '" type="text" name="' . $name_path . '" value="' . $data_node[$key] . '"></li>';
       }
     }
   }
