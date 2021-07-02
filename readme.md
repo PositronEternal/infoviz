@@ -1,4 +1,4 @@
-# Information Visualizer Project
+# Responsive Information Visualizer Project
 
 ## Completed
 - Build a fresh docker compose environment with the lastest versions of MySql and PHP
