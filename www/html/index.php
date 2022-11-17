@@ -11,6 +11,15 @@ $data = [
     'Office Hours' => '10:30am-12:30pm',
     'Office Location' => '6B',
     'controls' => []
+  ],
+  'hr_employee_2' => [
+    'title' => 'Bob Ferapples',
+     'somesub' =>  ['title' => 'Contact', 
+     'Email' => 'bob.ferapples@notarealplace.net',
+     'Phone' => '555-867-5309',],
+    'Office Hours' => '10:30pm-12:30am',
+    'Office Location' => '14A',
+    'controls' => []
   ]
 ];
 
@@ -67,8 +76,8 @@ function build_node($data_node, $parentage = [], $level = 1)
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/infoviz.css">
-  <script src="/js/infoviz.js"></script>
+  <link rel="stylesheet" href="/infoviz.css?version=<?= filemtime(__DIR__ . '/infoviz.css') ?>"">
+  <script src="/infoviz.js?version=<?= filemtime(__DIR__ . '/infoviz.js') ?>"></script>
   <title>Hot PHP Apache Mysql!!!</title>
 </head>
 

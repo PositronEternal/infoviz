@@ -1,13 +1,13 @@
 :root {
-  --label-gap: .2em;
+  --label-gap: 0.2em;
   --leaf-background: initial;
 
   --border-thickness: 4px;
 
   --bg-light-1: rgb(253, 241, 241);
   --fg-light-1: rgb(17, 0, 0);
-  --border-light-1: var(--border-thickness) double #ccc;
-  --border-light-focus-1: var(--border-thickness) solid #aaa;
+  --border-light-1: var(--border-thickness) double #333;
+  --border-light-focus-1: var(--border-thickness) solid #444;
   --bg-light-input: #eee;
   --fg-light-input: black;
 
@@ -18,13 +18,13 @@
   --fg-dark-1: #eee;
   --bg_dark_input: #000;
   --fg-dark-input: #eee;
-  --border-dark-1: var(--border-thickness) double #333;
-  --border-dark-focus-1: var(--border-thickness) solid #444;
+  --border-dark-1: var(--border-thickness) double #222;
+  --border-dark-focus-1: var(--border-thickness) solid #333;
 
-  --border-dark-input: var(--border-thickness) double #222;
-  --border-dark-input-focus: var(--border-thickness) solid #666;
+  --border-dark-input: var(--border-thickness) double #333;
+  --border-dark-input-focus: var(--border-thickness) solid #444;
 
-  --input-border-radius: .2em;
+  --input-border-radius: 0.2em;
   --node-border-radius: 2em;
 
   font-family: sans-serif;
@@ -40,7 +40,7 @@ input {
 .data-node * {
   margin: 0;
   padding: 0;
-  
+
   box-sizing: border-box;
 }
 
@@ -53,7 +53,7 @@ body {
 .data-node {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-basis: fit-content;
 
   text-indent: 0;
   list-style: none;
@@ -61,8 +61,6 @@ body {
   border: var(--border-light-1);
   border-radius: var(--node-border-radius);
   margin: 1em;
-
-  width: fit-content;
 }
 
 .data-node:focus-within {
@@ -75,8 +73,8 @@ body {
 .data-node h4,
 .data-node h5,
 .data-node h6 {
-  margin-top: calc(var(--node-border-radius)/2);
-  margin-left: calc(var(--node-border-radius)/2);
+  margin-top: calc(var(--node-border-radius) / 2);
+  margin-left: calc(var(--node-border-radius) / 2);
   width: 100%;
 }
 
@@ -88,7 +86,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: .4em;
+  margin: 0.4em;
 
   background: var(--leaf-background);
   text-indent: 0;
@@ -97,16 +95,16 @@ body {
   max-width: max-content;
 }
 
-.data-leaf>label {
+.data-leaf > label {
   height: max-content;
   text-align: center;
   margin: 0 var(--label-gap) 0 0;
 }
 
-.data-leaf>input {
+.data-leaf > input {
   background: var(--bg-light-input);
   color: var(--fg-light-input);
-  padding: .6em;
+  padding: 0.6em;
   width: max-content;
 
   border-radius: var(--input-border-radius);
@@ -114,26 +112,29 @@ body {
   outline: none;
 }
 
-.data-leaf>input:focus {
+.data-leaf > input:focus {
   border: var(--border-light-input-focus);
 }
 
 @media only screen and (max-width: 600px) {
+  .data-node {
+    flex-basis: fit-content;
+  }
   .data-leaf {
     flex-direction: column;
   }
 
-  .data-leaf>label {
+  .data-leaf > label {
     margin: 0 0 var(--label-gap) 0;
   }
 }
 
-@media ( prefers-color-scheme: dark ) {
-	body {
+@media (prefers-color-scheme: dark) {
+  body {
     background: var(--bg-dark-1);
     color: var(--fg-dark-1);
-	}
-  
+  }
+
   .data-node {
     border: var(--border-dark-1);
   }
@@ -141,14 +142,14 @@ body {
   .data-node:focus-within {
     border: var(--border-dark-focus-1);
   }
-  
-  .data-leaf>input {
+
+  .data-leaf > input {
     background: var(--bg_dark_input);
     color: var(--fg-dark-input);
     border: var(--border-dark-input);
   }
 
-  .data-leaf>input:focus {
+  .data-leaf > input:focus {
     border: var(--border-dark-input-focus);
   }
 }
