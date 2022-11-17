@@ -1,14 +1,18 @@
 <?php
 
 
-$data = [];
-
-$data['title'] = 'Level 1';
-$data['section1'] = ['somedata' => 'lvl2', 'title' => 'Level 2', 'Favorite Color' => 'Blue', 'somesub' => ['more data' => 'lvl3', 'title' => 'Level 3', 'another data' => 'here\'s data']];
-$data['Key 1'] = 'value1';
-$data['Key 2'] = 'Value 2';
-$data['controls'] = [];
-
+$data = [
+  'title' => 'Human Resources',
+  'hr_employee_1' => [
+    'title' => 'Andy Spiffy',
+     'somesub' =>  ['title' => 'Contact', 
+     'Email' => 'andy.spiffy@notarealplace.net',
+     'Phone' => '555-123-9876',],
+    'Office Hours' => '10:30am-12:30pm',
+    'Office Location' => '6B',
+    'controls' => []
+  ]
+];
 
 function build_node($data_node, $parentage = [], $level = 1)
 {

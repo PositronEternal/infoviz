@@ -61,6 +61,8 @@ body {
   border: var(--border-light-1);
   border-radius: var(--node-border-radius);
   margin: 1em;
+
+  width: fit-content;
 }
 
 .data-node:focus-within {
@@ -105,6 +107,7 @@ body {
   background: var(--bg-light-input);
   color: var(--fg-light-input);
   padding: .6em;
+  width: max-content;
 
   border-radius: var(--input-border-radius);
   border: var(--border-light-input);
